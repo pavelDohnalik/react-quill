@@ -22,3 +22,5 @@
 # Test artifacts
 .cypress/screenshots
 .cypress/videos
+
+.idea

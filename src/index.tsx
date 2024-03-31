@@ -6,6 +6,7 @@ https://github.com/zenoamaro/react-quill
 import React from 'react';
 import ReactDOM from 'react-dom';
 import isEqual from 'lodash/isEqual';
+import ImageCompress from 'quill-image-compress';
 
 import Quill, {
   QuillOptionsStatic,
@@ -329,6 +330,7 @@ class ReactQuill extends React.Component<ReactQuillProps, ReactQuillState> {
   configuration, have its events bound,
   */
   createEditor(element: Element, config: QuillOptions) {
+    Quill.register('modules/imageCompress', ImageCompress);
     const editor = new Quill(element, config);
     if (config.tabIndex != null) {
       this.setEditorTabIndex(editor, config.tabIndex);
